@@ -3,15 +3,15 @@
 'use strict';
 function $require(id) {
   // 找到文件
-  var fs = require('fs');
-  var path = require('path');
-  var fileName = path.join(__dirname, id);
-  var dirName = path.dirname(fileName);
+  const fs = require('fs');
+  const path = require('path');
+  const fileName = path.join(__dirname, id);
+  const dirName = path.dirname(fileName);
   //获取代码
-  var code =  fs.readFileSync(fileName, 'utf8');
+  let code =  fs.readFileSync(fileName, 'utf8');
   // 执行代码 => 需要营造一个私有空间
-  var module = {id: fileName, exports: {} };
-  var exports = module.exports;
+  const module = {id: fileName, exports: {} };
+  const exports = module.exports;
   code = `(function($require, module, exports, __dirname, __filename){
     ${code}
   })($require, module, exports, dirName,fileName);`;
@@ -23,6 +23,6 @@ function $require(id) {
   return module.exports;
 }
 
-var m4 = $require('./module/index.js');
+const m4 = $require('./module/index.js');
 m4.say('m4 say hello to you');
 
