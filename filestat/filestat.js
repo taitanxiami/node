@@ -2,11 +2,8 @@
 
 //同步获取目录下的所有文件夹
 
-
-
 var http = require('http');
 var fs  = require('fs');
-
 
 http.createServer(function(req, res){
 
