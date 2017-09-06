@@ -24,5 +24,6 @@ Person.prototype.saysong = function() {
 //             console.log('say hi');
 //         }
 //     }
+
     //暴露出来一个类,此时Person 就被视为一个构造函数
 module.exports = Person;
