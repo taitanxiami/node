@@ -6,4 +6,4 @@ app.use(express.static('./public'));
 app.get('/haha',function(req,res){
   res.send('this is a haha page');
 });
-app.listen(3000);
+app.listen(2999);
